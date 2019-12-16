@@ -7,13 +7,13 @@ def for_loop(lista):
     start = time.time()
     for i in lista:
         if i % 2 == 0:
-            lista_tuple.append((i, randint(0,1000)))
+            lista_tuple.append((i, i^2))
     end = time.time()
     sorted_lista = (sorted(lista_tuple, key= lambda x:x[1]))
     return [end - start, sorted_lista]
 def list_com(lista):
     start = time.time()
-    lista_tuple_comprehention = [(i, randint(0,1000)) for i in lista if i % 2 == 0]
+    lista_tuple_comprehention = [(i, i^2) for i in lista if i % 2 == 0]
     end = time.time()
     sorted_lista = (sorted(lista_tuple_comprehention, key=lambda x: x[1]))
     return [end - start, sorted_lista]
